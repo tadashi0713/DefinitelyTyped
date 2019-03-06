@@ -434,7 +434,7 @@ declare namespace Mocha {
          *
          * - _Only available when invoked via the mocha CLI._
          */
-        (fn: Func): Test;
+        (fn: Func, retry?: number): Test;
 
         /**
          * Describe a specification or test-case with the given callback `fn` acting as a thunk.
@@ -442,7 +442,7 @@ declare namespace Mocha {
          *
          * - _Only available when invoked via the mocha CLI._
          */
-        (fn: AsyncFunc): Test;
+        (fn: AsyncFunc, retry?: number): Test;
 
         /**
          * Describe a specification or test-case with the given `title` and callback `fn` acting
@@ -450,7 +450,7 @@ declare namespace Mocha {
          *
          * - _Only available when invoked via the mocha CLI._
          */
-        (title: string, fn?: Func): Test;
+        (title: string, fn?: Func, retry?: number): Test;
 
         /**
          * Describe a specification or test-case with the given `title` and callback `fn` acting
@@ -458,7 +458,7 @@ declare namespace Mocha {
          *
          * - _Only available when invoked via the mocha CLI._
          */
-        (title: string, fn?: AsyncFunc): Test;
+        (title: string, fn?: AsyncFunc, retry?: number): Test;
 
         /**
          * Indicates this test should be executed exclusively.
