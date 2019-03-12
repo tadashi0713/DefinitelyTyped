@@ -357,14 +357,7 @@ declare namespace Mocha {
          *
          * - _Only available when invoked via the mocha CLI._
          */
-        (title: string, fn: (this: Suite) => void): Suite;
-
-        /**
-         * [qunit] Describe a "suite" with the given `title`.
-         *
-         * - _Only available when invoked via the mocha CLI._
-         */
-        (title: string): Suite;
+        (title: string, fn?: (this: Suite) => void): Suite;
 
         /**
          * [bdd, tdd, qunit] Indicates this suite should be executed exclusively.
@@ -388,15 +381,7 @@ declare namespace Mocha {
          *
          * - _Only available when invoked via the mocha CLI._
          */
-        (title: string, fn: (this: Suite) => void): Suite;
-
-        /**
-         * [qunit] Describe a "suite" with the given `title`. Indicates this suite should be executed
-         * exclusively.
-         *
-         * - _Only available when invoked via the mocha CLI._
-         */
-        (title: string): Suite;
+        (title: string, fn?: (this: Suite) => void): Suite;
     }
 
     /**
@@ -620,6 +605,7 @@ declare namespace Mocha {
         class Base {
             constructor(runner: Runner, options?: MochaOptions);
             /** @deprecated Use the overload that accepts `Mocha.Runner` instead. */
+            /* tslint:disable:unified-signatures */
             constructor(runner: IRunner, options?: MochaOptions);
 
             /**
@@ -1300,6 +1286,7 @@ declare namespace Mocha {
         constructor(suite: Suite, delay: boolean);
 
         /** @deprecated Use the overload that accepts `Mocha.Suite` instead. */
+        /* tslint:disable:unified-signatures */
         constructor(suite: ISuite, delay: boolean);
 
         suite: Suite;
